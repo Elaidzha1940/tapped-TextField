@@ -26,21 +26,21 @@ struct SortView: View {
                 self.is_selected = .priceincrease
                 didTap()
             } label: {
-                getLabel(title: "По возрастанию цены", type: .priceincrease)
+                getLabel(title: "1 st Day", type: .priceincrease)
             }
             
             Button {
                 self.is_selected = .descendingprice
                 didTap()
             } label: {
-                getLabel(title: "По убыванию цены", type: .descendingprice)
+                getLabel(title: "2nd Day", type: .descendingprice)
             }
             
             Button {
                 self.is_selected = .byrating
                 didTap()
             } label: {
-                getLabel(title: "По рейтингу", type: .byrating)
+                getLabel(title: "3rd", type: .byrating)
             }
             
             Button {
@@ -50,11 +50,12 @@ struct SortView: View {
                 getLabel(title: "По акциям", type: .bypromotions)
             }
         }
-        .foregroundColor(.brown)
+        .foregroundColor(.black)
         .background(
-            Color.blue
+            Color.orange
         )
         .cornerRadius(20)
+        .padding()
     }
 }
 
@@ -72,7 +73,7 @@ extension SortView {
             Spacer()
         }
         .padding()
-        .background(is_selected == type ? Color.red : .clear)
+        .background(is_selected == type ? Color.brown : .clear)
     }
     
     func didTap() {
