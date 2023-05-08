@@ -11,43 +11,43 @@ import SwiftUI
 
 
 enum SortEnum {
-    case priceincrease, descendingprice, byrating, bypromotions
+    case firstday, secondday, thirdday, lastday
 }
 
 
 struct SortView: View {
-    @State var is_selected: SortEnum = .priceincrease
+    @State var is_selected: SortEnum = .firstday
     
     @Binding var showConfirmationDialog: Bool
     
     var body: some View {
         VStack(spacing: 0) {
             Button {
-                self.is_selected = .priceincrease
+                self.is_selected = .firstday
                 didTap()
             } label: {
-                getLabel(title: "1 st Day", type: .priceincrease)
+                getLabel(title: "1st Day", type: .firstday)
             }
             
             Button {
-                self.is_selected = .descendingprice
+                self.is_selected = .secondday
                 didTap()
             } label: {
-                getLabel(title: "2nd Day", type: .descendingprice)
+                getLabel(title: "2nd Day", type: .secondday)
             }
             
             Button {
-                self.is_selected = .byrating
+                self.is_selected = .thirdday
                 didTap()
             } label: {
-                getLabel(title: "3rd", type: .byrating)
+                getLabel(title: "3rd Day", type: .thirdday)
             }
             
             Button {
-                self.is_selected = .bypromotions
+                self.is_selected = .lastday
                 didTap()
             } label: {
-                getLabel(title: "По акциям", type: .bypromotions)
+                getLabel(title: "4th Day", type: .lastday)
             }
         }
         .foregroundColor(.black)
