@@ -11,7 +11,7 @@ import SwiftUI
 struct tapped_TextFieldApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SortView(showConfirmationDialog: .constant(false))
         }
     }
 }
